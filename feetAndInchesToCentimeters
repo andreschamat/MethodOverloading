@@ -1,0 +1,27 @@
+public class calcFeetAndInchesToCentimeters {
+    public static double calc(double feet, double inches){
+        if(feet <= 0 || inches >=12 || inches < 0){
+            System.out.println("Invalid Parameters");
+            return -1;
+        }
+        double cminches = (double) (inches * 2.54);
+        double cmfeet = feet*2.54*12;
+        System.out.println(inches + " inches = " + cminches + " centimeters" );
+        System.out.println(feet + " feet = " + cmfeet + " centimeters");
+        System.out.println("The total of the sum equals to = " + (cmfeet + cminches) + " centimeters");
+        return 1;
+    }
+    public static double calc(double inches){
+        if(inches >= 0){
+            double inchesToFeet = (double) (inches/12);
+            double remainInches = (double) inches % 12;
+            System.out.println(inches + " inches = " + inchesToFeet + " feet" );
+            System.out.println("The remainder is = " + remainInches);
+            return calc(inchesToFeet, 0);
+
+        }
+        System.out.println("Invalid Parameter");
+        return -1;
+    }
+
+}
